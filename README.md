@@ -1,55 +1,129 @@
-![Thumbnail ](images/Thumbnail.png)
+# Sam-Devfolio
 
-# Huzaif Ahmed - Devfolio Website
+A personal portfolio built with Next.js and styled with Tailwind CSS.
 
-A modern and responsive Devfolio website to showcase my projects, skills, and experiences. Built with Next.js and styled using Tailwind CSS, this Devfolio provides a seamless user experience with smooth animations and an organized layout.
+## Key Features & Benefits
 
-## Features
+*   **Modern Design:** A clean and responsive design powered by Tailwind CSS.
+*   **Interactive UI:** Engaging user experience with animations handled by Framer Motion.
+*   **Project Showcase:** Dynamically displays GitHub projects.
+*   **Contact Form:** Integrated contact form for easy communication.
+*   **Dark/Light Mode:** Theme support for user preference using Next Themes.
+*   **Smooth Transitions:** Uses `nextjs-toploader` for loading indicators.
+*   **Fonts:** Custom fonts using `next/font/local`.
 
-- **Responsive Design**: Optimized for all devices, including mobile, tablet, and desktop.
-- **Dark Theme**: Provides a visually appealing dark theme.
-- **Smooth Animations**: Utilizes Framer Motion for animations.
+## Prerequisites & Dependencies
 
-## Technologies Used
+*   Node.js (v18 or higher)
+*   npm or yarn package manager
+*   A GitHub account (for fetching projects)
 
-- **Next.js**: React framework for building static and dynamic websites.
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
-- **Framer Motion**: Animation library for React to create smooth transitions and effects.
-- **GitHub API**: Fetches the latest GitHub projects dynamically.
+## Installation & Setup Instructions
 
-## Getting Started
+1.  **Clone the repository:**
 
-### Prerequisites
+    ```bash
+    git clone https://github.com/samranjithpaul/Sam-Devfolio.git
+    cd Sam-Devfolio
+    ```
 
-- [Node.js](https://nodejs.org/) (v14 or later)
-- [Git](https://git-scm.com/)
+2.  **Install dependencies:**
 
-### Installation
+    ```bash
+    npm install  # or yarn install
+    ```
 
-1. Clone the repository:
+3.  **Set up environment variables:**
 
-   ```bash
-   git clone https://github.com/samranjithpaul/Devfolio-website.git
-   ```
+    *   Create a `.env.local` file in the root directory.
+    *   Add the following environment variables:
 
-2. Navigate into the project directory:
+    ```
+    #Example for handling contact form (if used backend)
+    #NEXT_PUBLIC_YOUR_API_ENDPOINT=http://your-api-endpoint.com/api/contact
+    ```
 
-   ```bash
-   cd Devfolio-website
-   ```
+4.  **Run the development server:**
 
-3. Install dependencies:
+    ```bash
+    npm run dev # or yarn dev
+    ```
 
-   ```bash
-   npm install
-   ```
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-4. Start the development server:
+## Usage Examples & API Documentation
 
-   ```bash
-   npm run dev
-   ```
+### Fetching GitHub Projects
 
+The `GithubProjects.jsx` component fetches projects from a GitHub repository using the GitHub API. You'll need to modify this to reflect your own profile. It's assumed the API key and repo information are already set up correctly for public repos.
 
+```javascript
+// Example code (simplified) from components/GithubProjects.jsx
+//Note that this is an assumption since no api calls are directly shown in the file tree
 
-![Demo](images/Screenshot_1.png)
+// const fetchProjects = async () => {
+//   const response = await fetch(
+//     `https://api.github.com/users/{YOUR_GITHUB_USERNAME}/repos`
+//   );
+//   const data = await response.json();
+//   // Process the data and display the projects
+// };
+```
+
+### Animations
+
+Framer Motion is used for UI animations.  Animations are defined in `app/(projects)/projects/components/Animations.js`.
+
+```javascript
+// app/(projects)/projects/components/Animations.js
+export const containerAnimation = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: { staggerChildren: 0.2 }
+    }
+};
+
+export const itemAnimation = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0 }
+};
+
+export const titleAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5
+        }
+    }
+}
+```
+
+## Configuration Options
+
+*   **Theme Customization:** Modify the `tailwind.config.js` file to customize the theme.
+*   **Component Styling:** Adjust styles within the individual JSX components.
+
+## Contributing Guidelines
+
+1.  Fork the repository.
+2.  Create a new branch for your feature or bug fix.
+3.  Make your changes.
+4.  Commit your changes with descriptive messages.
+5.  Push your changes to your fork.
+6.  Submit a pull request.
+
+## License Information
+
+This project is licensed under an "Other" license, which typically indicates a custom license or no explicit license. Contact the repository owner (samranjithpaul) for specific licensing terms.
+
+## Acknowledgments
+
+*   [Next.js](https://nextjs.org/)
+*   [Tailwind CSS](https://tailwindcss.com/)
+*   [Framer Motion](https://www.framer.com/motion/)
+*   [Next Themes](https://github.com/pacocoursey/next-themes)
+*   [sonner](https://sonner.emilkowalski.com/)
+*   [nextjs-toploader](https://github.com/NaimaToure/nextjs-toploader)
