@@ -35,7 +35,7 @@ projects: [
     image: "/projects/fraud.png",
     technologies: ["Python", "Scikit-learn", "Pandas", "Data Science"],
     github: "https://github.com/samranjithpaul/Online_payment_fraud_detection",
-    demo: "#"
+   
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ projects: [
     image: "/projects/studentmern.png",
     technologies: ["MongoDB", "Express", "React", "Node.js"],
     github: "https://github.com/samranjithpaul/student-management-system-MERN",
-    demo: "#"
+    
   },
   {
     id: 4,
@@ -54,8 +54,9 @@ projects: [
       "A 3D particle system simulating cosmic phenomena like star fields and nebulae using Three.js. Features interactive controls, dynamic animations, and visually stunning effects.",
     image: "/projects/3D.png",
     technologies: ["Next.js", "Three.js", "React", "TypeScript"],
-    github: "https://github.com/samranjithpaul/stellar-love",
-    demo: "#"
+    github: "https://github.com/samranjithpaul/Cosmic-Particles-Renderer",
+
+    demo: "https://cosmic-particles-renderer.vercel.app"
   },
   {
     id: 5,
